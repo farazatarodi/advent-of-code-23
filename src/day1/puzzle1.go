@@ -2,21 +2,10 @@ package main
 
 import (
 	"fmt"
-	"os"
 	"strconv"
-	"strings"
 )
 
-func main() {
-	inputByte, inputErr := os.ReadFile("src/day1/input.text")
-
-	if inputErr != nil {
-		fmt.Print(inputErr)
-	}
-
-	inputString := string(inputByte)
-	lines := strings.Split(inputString, "\n")
-
+func Puzzle1(lines []string) {
 	var calibrationValues []int
 	for _, line := range lines {
 		var integers []int
@@ -39,5 +28,5 @@ func main() {
 	for _, value := range calibrationValues {
 		sum += value
 	}
-	fmt.Println(sum)
+	fmt.Println("Day 1, Puzzle 1:", sum)
 }
